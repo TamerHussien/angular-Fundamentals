@@ -6,15 +6,9 @@ import { Component } from '@angular/core';
     <div>
     <h1>Upcoming Angular2 Events </h1>
     <hr/>
-    <div class="well">
-        <div> Hello World</div>
-    </div>
     <events-thumbnail [event]="event1"></events-thumbnail>
 </div>
-    `,
-    styles: [`
-    .well div { color: red; }
-    `]
+    `
 })
 
 export class EventsListComponent {
