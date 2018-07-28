@@ -8,7 +8,7 @@ import { NavBarComponent } from "./nav/navbar.component";
 import { EventService } from "./events/shared/event.service";
 import { ToastrService } from "./common/toastr.service";
 import { EventDetailsComponent } from "./events/event-details/event-details.component";
-import { appRoutes } from "./assets/routes";
+import { appRoutes } from "./routes";
 import { CreateEventComponent } from "./events/create-event.component";
 import { Error404Component } from "./errors/404.component";
 import { EventRouterActivator } from "./events/event-details/event-router-activator";
