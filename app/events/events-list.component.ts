@@ -10,7 +10,7 @@ import { ToastrService } from '../common/toastr.service';
     <hr/>
     <div class="row">
     <div *ngFor="let event of events " class="col-md-5">
-    <events-thumbnail (click)="handleThumbnailClick(event.name)"[event]="event"></events-thumbnail>
+    <events-thumbnail [event]="event"></events-thumbnail>
     </div>
     </div>
 </div>
