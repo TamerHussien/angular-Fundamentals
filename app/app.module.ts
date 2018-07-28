@@ -18,7 +18,18 @@ import { EventRouterActivator } from "./events/event-details/event-router-activa
     declarations: [EventsAppComponent, EventsListComponent,
         EventsThumbnailComponent, NavBarComponent, EventDetailsComponent, CreateEventComponent, Error404Component],
     bootstrap: [EventsAppComponent],
-    providers: [EventService, ToastrService, EventRouterActivator]
+    providers: [EventService, ToastrService, 
+        EventRouterActivator,
+        {provide: 'canDeactivateCreateEvent', useValue: checkDirtyState}
+    ]
 })
 
 export class AppModule {}
+
+function checkDirtyState(component: CreateEventComponent){
+
+    if (component.isDirty){
+     return   window.confirm('Are you sure');
+    }
+return true;
+}
