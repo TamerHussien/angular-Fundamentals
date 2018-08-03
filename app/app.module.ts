@@ -8,6 +8,7 @@ import { appRoutes } from "./routes";
 import { Error404Component } from "./errors/404.component";
 import { EventsListComponent, EventsThumbnailComponent ,EventService, EventDetailsComponent, CreateEventComponent
 , EventRouterActivator, EventListResolver} from './events/index'
+import { AuthService } from "./user/auth.service";
 @NgModule({
     imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
     declarations: [EventsAppComponent, EventsListComponent,
@@ -16,7 +17,8 @@ import { EventsListComponent, EventsThumbnailComponent ,EventService, EventDetai
     providers: [EventService, ToastrService, 
         EventRouterActivator,
         {provide: 'canDeactivateCreateEvent', useValue: checkDirtyState},
-        EventListResolver
+        EventListResolver,
+        AuthService,
     ]
 })
 
