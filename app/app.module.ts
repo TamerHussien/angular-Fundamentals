@@ -7,7 +7,7 @@ import { ToastrService } from "./common/toastr.service";
 import { appRoutes } from "./routes";
 import { Error404Component } from "./errors/404.component";
 import { EventsListComponent, EventsThumbnailComponent ,EventService, EventDetailsComponent, CreateEventComponent
-, EventRouterActivator, EventListResolver, CreateSessionComponent, SessionListComponent} from './events/index'
+, EventRouterActivator, EventListResolver, CreateSessionComponent, SessionListComponent, DurationPipe} from './events/index'
 import { AuthService } from "./user/auth.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CollapsibleComponent } from "./common/collapsible-well.component";
@@ -23,7 +23,8 @@ import { CollapsibleComponent } from "./common/collapsible-well.component";
         Error404Component,
         CreateSessionComponent,
         SessionListComponent,
-        CollapsibleComponent
+        CollapsibleComponent,
+        DurationPipe
     ],
     bootstrap: [EventsAppComponent],
     providers: [EventService, ToastrService, 
