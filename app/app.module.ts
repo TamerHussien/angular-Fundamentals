@@ -31,7 +31,7 @@ declare let toastr: Toastr;
     bootstrap: [EventsAppComponent],
     providers: [
         EventService, 
-        {provide: TOASTR_TOKEN, useValue: toastr}, 
+        {provide: TOASTR_TOKEN, useValue: toastr},
         EventRouterActivator,
         {provide: 'canDeactivateCreateEvent', useValue: checkDirtyState},
         EventListResolver,
