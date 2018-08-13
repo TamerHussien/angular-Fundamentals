@@ -34,7 +34,7 @@ declare let toastr: Toastr;
         {provide: TOASTR_TOKEN, useValue: toastr},
         EventRouterActivator,
         {provide: 'canDeactivateCreateEvent', useValue: checkDirtyState},
-        EventListResolver,
+        EventListResolver, 
         AuthService,
     ]
 })
