@@ -3,15 +3,16 @@ import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { EventsAppComponent} from "./events.app.component";
 import { NavBarComponent } from "./nav/navbar.component";
-import { TOASTR_TOKEN, Toastr } from "./common/toastr.service";
+import { TOASTR_TOKEN, Toastr, CollapsibleComponent, JQ_TOKEN } from "./common/index";
 import { appRoutes } from "./routes";
 import { Error404Component } from "./errors/404.component";
 import { EventsListComponent, EventsThumbnailComponent ,EventService, EventDetailsComponent, CreateEventComponent
 , EventRouterActivator, EventListResolver, CreateSessionComponent, SessionListComponent, DurationPipe} from './events/index'
 import { AuthService } from "./user/auth.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { CollapsibleComponent } from "./common/collapsible-well.component";
 declare let toastr: Toastr;
+declare let jQuery: Object;
+
 
 @NgModule({
     imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule, ReactiveFormsModule],
