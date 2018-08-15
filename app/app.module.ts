@@ -3,7 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { EventsAppComponent} from "./events.app.component";
 import { NavBarComponent } from "./nav/navbar.component";
-import { TOASTR_TOKEN, Toastr, CollapsibleComponent, JQ_TOKEN, SimpleModalComponent } from "./common/index";
+import { TOASTR_TOKEN, Toastr, CollapsibleComponent, JQ_TOKEN, SimpleModalComponent, ModalTriggerDirective } from "./common/index";
 import { appRoutes } from "./routes";
 import { Error404Component } from "./errors/404.component";
 import { EventsListComponent, EventsThumbnailComponent ,EventService, EventDetailsComponent, CreateEventComponent
@@ -28,7 +28,8 @@ declare let jQuery: Object;
         SessionListComponent,
         CollapsibleComponent,
         DurationPipe,
-        SimpleModalComponent
+        SimpleModalComponent,
+        ModalTriggerDirective
     ],
     bootstrap: [EventsAppComponent],
     providers: [
@@ -39,8 +40,8 @@ declare let jQuery: Object;
         {provide: 'canDeactivateCreateEvent', useValue: checkDirtyState},
         EventListResolver, 
         AuthService,
-    ]
-})
+    ],
+ })
 
 export class AppModule {}
 
