@@ -7,7 +7,7 @@ import { TOASTR_TOKEN, Toastr, CollapsibleComponent, JQ_TOKEN, SimpleModalCompon
 import { appRoutes } from "./routes";
 import { Error404Component } from "./errors/404.component";
 import { EventsListComponent, EventsThumbnailComponent ,EventService, EventDetailsComponent, CreateEventComponent
-, EventRouterActivator, EventListResolver, CreateSessionComponent, SessionListComponent, DurationPipe} from './events/index'
+, EventRouterActivator, EventListResolver, CreateSessionComponent, SessionListComponent, DurationPipe, UpvoteComponent, VoterService} from './events/index'
 import { AuthService } from "./user/auth.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 declare let toastr: Toastr;
@@ -29,7 +29,8 @@ declare let jQuery: Object;
         CollapsibleComponent,
         DurationPipe,
         SimpleModalComponent,
-        ModalTriggerDirective
+        ModalTriggerDirective,
+        UpvoteComponent
     ],
     bootstrap: [EventsAppComponent],
     providers: [
@@ -40,6 +41,7 @@ declare let jQuery: Object;
         {provide: 'canDeactivateCreateEvent', useValue: checkDirtyState},
         EventListResolver, 
         AuthService,
+        VoterService
     ],
  })
 
