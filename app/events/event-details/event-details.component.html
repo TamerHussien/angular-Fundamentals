@@ -13,12 +13,15 @@
             <div><strong>Time:</strong> {{event?.time}}</div>
             <div><strong>Price:</strong> {{event?.price | currency: 'USD': true}}</div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" *ngIf="event.location && !event.onlineUrl">
             <address>
           <strong>Address:</strong><br />
           {{event?.location?.address}}<br />
           {{event?.location?.city}}, {{event?.location?.country}}
         </address>
+        </div>
+        <div class="col-md-6" *ngIf="event.onlineUrl">
+            <strong>Address:</strong><br /> {{event?.onlineUrl}}
         </div>
     </div>
     <hr>
