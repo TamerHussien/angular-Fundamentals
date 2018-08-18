@@ -34,22 +34,10 @@ export class EventService {
     
 
     searchSessions(searchTerm: string) {
-      let term  = searchTerm.toLocaleLowerCase();
-      let results: ISessions[] = [];
-      EVENTS.forEach(event => {
-        let matchingSession = event.sessions.filter(session => session.name.toLocaleLowerCase().indexOf(term) > -1);
-        matchingSession = matchingSession.map((session: any ) => {
-          session.eventId = event.id;
-          return session;
-        });
-        results = results.concat(matchingSession);
-      })
-      let emitter = new EventEmitter(true);
-      setTimeout(() => {
-        emitter.emit(results)
-      }, 100);
-
-      return emitter;
+      return this.http.get("/api/sessions/search?search=" + searchTerm)
+      .map((response: Response) => {
+        return response.json();
+      }).catch(this.handleError);
     }
 
 
