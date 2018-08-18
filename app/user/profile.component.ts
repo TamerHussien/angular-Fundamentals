@@ -41,14 +41,20 @@ constructor( private auth: AuthService,private router: Router, @Inject (TOASTR_T
   }
   saveProfile(formValues){
     if (this.profileForm.valid){
-    this.auth.updateCurrentUser(formValues.firstName, formValues.lastName);
-    this.router.navigate(['/events']);
+    this.auth.updateCurrentUser(formValues.firstName, formValues.lastName).subscribe(() =>{
+     
       this.toastr.success('Profile Saved');
+    });
+    
   }
 }
 
   cancel(){
     this.router.navigate(['/events']);
 }
-       
+logOut(){
+  this.auth.logOut().subscribe(() => {
+    this.router.navigate(['/user/login']);
+  })
+}
 }
