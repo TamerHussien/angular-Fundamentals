@@ -63,7 +63,5 @@ function sortByNameAsc(s1: ISessions, s2: ISessions) {
 }
 
 function sortByVotesDesc(s1: ISessions, s2: ISessions) {
-    if(s1.voters < s2.voters) return 1
-    else if(s1.voters === s2.voters) return 0
-    else return -1
+    return s2.voters.length - s1.voters.length
 }
