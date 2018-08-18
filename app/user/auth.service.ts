@@ -30,4 +30,18 @@ this.currentUser.lastName = lastName;
     isAuthenticated() {
         return !!this.currentUser;
     }
+
+    checkAuth(){
+        return this.http.get('/api/currentIdentity').map((res: any) => {
+            if (res._body){
+                return res.json()
+            } else {
+                return {}
+            }
+        }).do(currentUser => {
+            if(!!currentUser.userName){
+                this.currentUser = currentUser;
+            }
+        }).subscribe();
+    }
 }
